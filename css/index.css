@@ -20,6 +20,7 @@ a {
 :root {
   --primary-color: #525252;
   --red-btn-color: #ee6a6a;
+  --red-btn-color-hover: #c94f4f;
 }
 
 .container {
@@ -41,6 +42,12 @@ a {
   display: inline-block;
   border-radius: 1.875em;
   color: #fff;
+  transition: all 0.3s ease 0s;
+}
+@media (any-hover: hover) {
+  .btn:hover {
+    background: var(--red-btn-color-hover);
+  }
 }
 
 .btn20 {
