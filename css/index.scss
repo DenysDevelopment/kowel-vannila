@@ -383,7 +383,7 @@ a {
 .section-category {
 	display: grid;
 	align-items: center;
-	gap: 20px;
+	gap: rem(20);
 	grid-template-columns: 1fr 1fr;
 	@include adaptiv-value('padding-left', 40, 20);
 
@@ -402,11 +402,11 @@ a {
 	}
 
 	&__title {
-		margin-bottom: 30px;
+		margin-bottom: rem(30);
 	}
 
 	&__img {
-		max-width: 600px;
+		max-width: rem(600);
 		width: 100%;
 		height: 100%;
 		@media (max-width: 962px) {
@@ -417,5 +417,65 @@ a {
 			height: 100%;
 			object-fit: cover;
 		}
+	}
+}
+
+//========================================================================================================================================================
+
+.welcome {
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&__body {
+		background: #ffffff;
+
+		box-shadow: 0px 4px rem(49) rgba(21, 33, 74, 0.08);
+		border-radius: rem(55);
+
+		max-width: rem(558);
+
+		padding: rem(41) rem(98) rem(71);
+		@include adaptiv-value('padding-top', 41, 20);
+		@include adaptiv-value('padding-bottom', 71, 20);
+		@include adaptiv-value('padding-right', 98, 20);
+		@include adaptiv-value('padding-left', 98, 20);
+		text-align: center;
+
+		display: grid;
+		gap: 30px;
+		margin: 20px;
+	}
+	&__img {
+		img {
+			width: 274px;
+			height: 282px;
+			object-fit: contain;
+		}
+	}
+	&__title {
+		font-weight: 700;
+		@include adaptiv-value('font-size', 48, 30);
+
+		letter-spacing: 0.04em;
+
+		color: #393939;
+	}
+	&__text {
+		font-weight: 500;
+		font-size: rem(20);
+		letter-spacing: 0.05em;
+
+		color: #535353;
+	}
+	&__btns {
+		display: grid;
+		gap: rem(30);
+		justify-content: center;
+		grid-template-columns: max-content;
+	}
+	&__btn {
+		color: #f4f4f4;
 	}
 }

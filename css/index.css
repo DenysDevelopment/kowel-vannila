@@ -375,7 +375,7 @@ a {
 .section-category {
   display: grid;
   align-items: center;
-  gap: 20px;
+  gap: 1.25rem;
   grid-template-columns: 1fr 1fr;
   padding-left: 40px;
   background: #ffffff;
@@ -408,10 +408,10 @@ a {
   }
 }
 .section-category__title {
-  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
 }
 .section-category__img {
-  max-width: 600px;
+  max-width: 37.5rem;
   width: 100%;
   height: 100%;
 }
@@ -425,4 +425,90 @@ a {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.welcome {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.welcome__body {
+  background: #ffffff;
+  box-shadow: 0px 4px 3.0625rem rgba(21, 33, 74, 0.08);
+  border-radius: 3.4375rem;
+  max-width: 34.875rem;
+  padding: 2.5625rem 6.125rem 4.4375rem;
+  padding-top: 41px;
+  padding-bottom: 71px;
+  padding-right: 98px;
+  padding-left: 98px;
+  text-align: center;
+  display: grid;
+  gap: 30px;
+  margin: 20px;
+}
+@media (max-width: 1120px) {
+  .welcome__body {
+    padding-top: calc(
+				20px + 21 * ((100vw - 320px) / 800)
+			);
+  }
+}
+@media (max-width: 1120px) {
+  .welcome__body {
+    padding-bottom: calc(
+				20px + 51 * ((100vw - 320px) / 800)
+			);
+  }
+}
+@media (max-width: 1120px) {
+  .welcome__body {
+    padding-right: calc(
+				20px + 78 * ((100vw - 320px) / 800)
+			);
+  }
+}
+@media (max-width: 1120px) {
+  .welcome__body {
+    padding-left: calc(
+				20px + 78 * ((100vw - 320px) / 800)
+			);
+  }
+}
+.welcome__img img {
+  width: 274px;
+  height: 282px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.welcome__title {
+  font-weight: 700;
+  font-size: 48px;
+  letter-spacing: 0.04em;
+  color: #393939;
+}
+@media (max-width: 1120px) {
+  .welcome__title {
+    font-size: calc(
+				30px + 18 * ((100vw - 320px) / 800)
+			);
+  }
+}
+.welcome__text {
+  font-weight: 500;
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+  color: #535353;
+}
+.welcome__btns {
+  display: grid;
+  gap: 1.875rem;
+  justify-content: center;
+  grid-template-columns: -webkit-max-content;
+  grid-template-columns: max-content;
+}
+.welcome__btn {
+  color: #f4f4f4;
 }/*# sourceMappingURL=index.css.map */
