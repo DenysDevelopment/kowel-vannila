@@ -19,4 +19,71 @@ const renderNews = async () => {
 	});
 };
 
-renderNews();
+if (newsBody) {
+	renderNews();
+}
+
+const isMobile = {
+	Android: function () {
+		return navigator.userAgent.match(/Android/i);
+	},
+	BlackBerry: function () {
+		return navigator.userAgent.match(/BlackBerry/i);
+	},
+	iOS: function () {
+		return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+	},
+	Opera: function () {
+		return navigator.userAgent.match(/Opera Mini/i);
+	},
+	Windows: function () {
+		return navigator.userAgent.match(/IEMobile/i);
+	},
+	any: function () {
+		return (
+			isMobile.Android() ||
+			isMobile.BlackBerry() ||
+			isMobile.iOS() ||
+			isMobile.Opera() ||
+			isMobile.Windows()
+		);
+	},
+};
+
+const menu = () => {
+	const header = document.querySelector('.header');
+	if (isMobile.any()) {
+		document.body.classList.add('page__body--touch');
+
+		const menuArrow = document.querySelectorAll('.menu__arrow');
+
+		menuArrow.forEach((arrow) => {
+			arrow.addEventListener('click', () => {
+				arrow.parentElement.classList.toggle('menu__item--active');
+			});
+		});
+	} else {
+		document.body.classList.add('page__body--pc');
+	}
+
+	const iconMenu = document.querySelector('.menu__icon');
+	if (iconMenu != null) {
+		const menuBody = document.querySelector('.menu__body');
+		iconMenu.addEventListener('click', () => {
+			document.body.classList.toggle('page__body--lock');
+			iconMenu.classList.toggle('menu__icon--active');
+			menuBody.classList.toggle('menu__body--active');
+			menuBody.style.paddingTop = `${header.getBoundingClientRect().height}px`;
+
+			if (menuBody.classList.contains('menu__body--active')) {
+				document.body.style.paddingRight = `${
+					window.innerWidth - document.body.clientWidth
+				}px`;
+			} else {
+				document.body.style.paddingRight = 0;
+			}
+		});
+	}
+};
+
+menu();
